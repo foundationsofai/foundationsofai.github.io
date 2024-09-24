@@ -3,249 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foundations of Artificial Intelligence Seminar Series</title>
+    <title>Foundations of AI Seminar Series | Georgia Tech</title>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
-
-        * {
+        body, html {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
+            font-family: 'Arial', sans-serif;
             color: #333;
-            background-color: #f0f0f0;
             overflow-x: hidden;
         }
-
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: #f0f0f0;
+            z-index: -1;
+        }
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px;
         }
-
         header {
-            background: linear-gradient(135deg, #003057, #003057 60%, #b3a369);
-            color: white;
-            padding: 2rem 0;
             text-align: center;
+            padding: 50px 0;
         }
-
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            animation: fadeInUp 1s ease-out;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #003057;
         }
-
         h2 {
-            font-size: 1.5rem;
-            font-weight: 300;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease-out 0.3s backwards;
+            font-size: 1.5em;
+            color: #B3A369;
+            margin-bottom: 20px;
         }
-
+        .intro {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
         .banner {
-            background-image: url('https://picsum.photos/1200/400');
+            width: 100%;
+            height: 300px;
+            background-image: url('https://www.cc.gatech.edu/sites/default/files/images/hero-images/coda-hero.jpg');
             background-size: cover;
             background-position: center;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
-
-        .banner-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: white;
-            max-width: 800px;
-            padding: 2rem;
-            background: rgba(0, 48, 87, 0.8);
+            margin-bottom: 30px;
             border-radius: 10px;
-            transform: translateY(50px);
-            opacity: 0;
-            animation: fadeInUp 1s ease-out 0.6s forwards;
-        }
-
-        .intro {
-            background-color: white;
-            padding: 3rem 0;
-            text-align: center;
-        }
-
-        .intro p {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 1s ease-out 0.9s forwards;
-        }
-
-        .schedule {
-            background-color: #f9f9f9;
-            padding: 3rem 0;
-        }
-
-        .schedule h3 {
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-            color: #003057;
-        }
-
-        .schedule-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .schedule-item {
-            background-color: white;
-            border-radius: 10px;
-            padding: 1.5rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
         }
-
-        .schedule-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        .schedule {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-
-        .schedule-item h4 {
+        .schedule h3 {
             color: #003057;
-            margin-bottom: 0.5rem;
         }
-
-        .schedule-item p {
-            font-size: 0.9rem;
+        .schedule ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .schedule li {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .schedule li:hover {
+            transform: translateY(-5px);
+        }
+        .schedule .speaker {
+            font-weight: bold;
+            color: #B3A369;
+        }
+        .schedule .date {
+            font-style: italic;
             color: #666;
         }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-
-        .particle {
-            position: absolute;
-            background-color: rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            pointer-events: none;
+        .fade-in {
+            animation: fadeIn 1s ease-in;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
+    <div id="particles-js"></div>
+    <div class="container">
+        <header class="fade-in">
             <h1>Foundations of Artificial Intelligence Seminar Series</h1>
             <h2>by Foundations of Artificial Intelligence @ Georgia Institute of Technology</h2>
-        </div>
-    </header>
-
-    <section class="banner">
-        <div class="banner-content">
-            <p>Exploring the frontiers of AI research and innovation</p>
-        </div>
-    </section>
-
-    <section class="intro">
-        <div class="container">
+        </header>
+        <div class="intro fade-in">
             <p>Welcome to the Student-Led AI Seminar Series, a seminar showcasing the latest research and developments in Artificial Intelligence. Our goal is to bring together students, postdocs, professors, and industry researchers to discuss a wide range of AI topics, including Machine Learning, Symbolic AI, AI Theory, AI Systems, and the intersection of AI and Programming Languages and Software Engineering (PLSE).</p>
         </div>
-    </section>
-
-    <section class="schedule">
-        <div class="container">
-            <h3>Speaker Schedule</h3>
-            <div class="schedule-grid">
-                <div class="schedule-item">
-                    <h4>Dr. Jane Smith</h4>
-                    <p>Topic: Advances in Natural Language Processing</p>
-                    <p>Date: May 15, 2023</p>
-                </div>
-                <div class="schedule-item">
-                    <h4>Prof. John Doe</h4>
-                    <p>Topic: Ethical Considerations in AI Development</p>
-                    <p>Date: June 1, 2023</p>
-                </div>
-                <div class="schedule-item">
-                    <h4>Dr. Emily Johnson</h4>
-                    <p>Topic: AI in Robotics: Current Trends and Future Directions</p>
-                    <p>Date: June 15, 2023</p>
-                </div>
-            </div>
+        <div class="banner fade-in"></div>
+        <div class="schedule fade-in">
+            <h3>Speaker Schedule and Abstracts</h3>
+            <ul>
+                <li>
+                    <span class="speaker">Dr. Jane Smith</span><br>
+                    <span class="date">March 15, 2024</span><br>
+                    <strong>Topic:</strong> Advances in Natural Language Processing<br>
+                    <em>Abstract:</em> This talk will explore recent breakthroughs in NLP, focusing on transformer architectures and their applications in various domains.
+                </li>
+                <li>
+                    <span class="speaker">Prof. John Doe</span><br>
+                    <span class="date">April 5, 2024</span><br>
+                    <strong>Topic:</strong> Ethical Considerations in AI Development<br>
+                    <em>Abstract:</em> We will discuss the ethical challenges faced in AI research and development, and propose frameworks for responsible AI creation.
+                </li>
+                <li>
+                    <span class="speaker">Dr. Emily Johnson</span><br>
+                    <span class="date">April 26, 2024</span><br>
+                    <strong>Topic:</strong> Reinforcement Learning in Robotics<br>
+                    <em>Abstract:</em> This presentation will cover the latest advancements in applying reinforcement learning techniques to robotic systems for improved autonomy.
+                </li>
+            </ul>
         </div>
-    </section>
-
+    </div>
     <script>
-        function createParticle(x, y) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            document.body.appendChild(particle);
-
-            const size = Math.random() * 5 + 2;
-            const duration = Math.random() * 1000 + 500;
-            const angle = Math.random() * Math.PI * 2;
-            const distance = Math.random() * 100 + 50;
-
-            particle.style.width = `${size}px`;
-            particle.style.height = `${size}px`;
-            particle.style.left = `${x}px`;
-            particle.style.top = `${y}px`;
-
-            const animation = particle.animate([
-                { transform: 'translate(0, 0)', opacity: 1 },
-                { transform: `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px)`, opacity: 0 }
-            ], {
-                duration: duration,
-                easing: 'ease-out'
-            });
-
-            animation.onfinish = () => {
-                particle.remove();
-            };
+        particlesJS('particles-js', {
+  "particles": {
+    "number": {
+      "value": 80,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#b3a369"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 5
+      },
+      "image": {
+        "src": "img/github.svg",
+        "width": 100,
+        "height": 100
+      }
+    },
+    "opacity": {
+      "value": 0.49716301422833176,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 3,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 40,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#b3a369",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 6,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "repulse"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 400,
+        "line_linked": {
+          "opacity": 1
         }
-
-        document.addEventListener('mousemove', (e) => {
-            if (Math.random() < 0.1) {
-                createParticle(e.clientX, e.clientY);
-            }
-        });
-
-        const scheduleItems = document.querySelectorAll('.schedule-item');
-        scheduleItems.forEach(item => {
-            item.addEventListener('click', () => {
-                item.style.backgroundColor = '#f0f0f0';
-                setTimeout(() => {
-                    item.style.backgroundColor = 'white';
-                }, 300);
-            });
+      },
+      "bubble": {
+        "distance": 400,
+        "size": 40,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 200,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
         });
     </script>
 </body>
