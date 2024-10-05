@@ -49,36 +49,76 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .schedule {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 10px;
+            background-color: #f8f8f8;
+            padding: 30px;
+            border-radius: 15px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .schedule h3 {
             color: #003057;
+            font-size: 1.8em;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #B3A369;
+            padding-bottom: 10px;
         }
         .schedule ul {
             list-style-type: none;
             padding: 0;
         }
         .schedule li {
-            margin-bottom: 20px;
-            padding: 10px;
             background-color: #fff;
-            border-radius: 5px;
+            border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            padding: 25px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .schedule li:hover {
             transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
         .schedule .speaker {
+            font-size: 1.4em;
             font-weight: bold;
-            color: #B3A369;
+            color: #003057;
+            margin-bottom: 5px;
+            display: block;
         }
-        .schedule .date {
+        .schedule .affiliation {
             font-style: italic;
             color: #666;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .schedule .date, .schedule .time, .schedule .location {
+            margin-bottom: 5px;
+            display: block;
+        }
+        .schedule .location a {
+            color: #B3A369;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .schedule .location a:hover {
+            color: #003057;
+            text-decoration: underline;
+        }
+        .schedule .topic {
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .schedule .abstract, .schedule .bio {
+            margin-top: 15px;
+            line-height: 1.6;
+        }
+        .schedule .abstract-title, .schedule .bio-title {
+            font-weight: bold;
+            color: #003057;
+            margin-bottom: 5px;
+            display: block;
         }
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -129,11 +169,23 @@
             <h3>Speaker Schedule and Abstracts</h3>
             <ul>
                 <li>
-                    <span class="speaker">Place Holder</span><br>
-                    <span class="date">Place Holder</span><br>
-                    <span class="location">Place Holder</span><br>
-                    <strong>Topic:</strong> Place Holder<br>
-                    <em>Abstract:</em> Place Holder
+                    <span class="speaker">Pavlo Molchanov</span>
+                    <span class="affiliation">NVIDIA Research</span>
+                    <span class="date">Thursday, October 10th, 2024</span>
+                    <span class="time">12 PM - 1 PM</span>
+                    <span class="location">
+                        <a href="https://maps.app.goo.gl/F2zGTanrUPGp1hTY6" target="_blank">B5 Classroom in Boggs</a> & 
+                        <a href="https://gatech.zoom.us/j/92521086871?pwd=KjOr5lQWhjeFKJZxsXfKWd4FOV940m.1" target="_blank">Zoom</a>
+                    </span>
+                    <span class="topic">Efficiency in Large Language Models with Post-Training Compression</span>
+                    <div class="abstract">
+                        <span class="abstract-title">Abstract:</span>
+                        Training large language models (LLMs) for various deployment scales and sizes traditionally involves training each variant from scratch, a process that is highly compute-intensive. In this talk, we explore three key techniques to significantly enhance LLM efficiency: (1) pruning and distillation, (2) Flexible LLM architecture with the Many-In-One concept, and (3) an advanced Parameter Efficient Finetuning Technique. Pruning and distillation can reduce pretraining costs by up to 40x, delivering models that are up to 16% more accurate than those trained from scratch. The Flexible LLM architecture allows the transformation of a single LLM into an infinite number of smaller sub-models, streamlining deployment across various applications. Lastly, we will discuss DoRa, a state-of-the-art PEFT method based on weight decomposition, enabling efficient model fine-tuning with limited data.
+                    </div>
+                    <div class="bio">
+                        <span class="bio-title">Bio:</span>
+                        Pavlo Molchanov is a Distinguished Research Scientist and Team Manager at NVIDIA Research. Since 2023, he has been leading the Deep Learning Efficiency Team. He obtained a PhD from Tampere University of Technology, Finland, in 2014. During his studies, he received the Nokia Foundation Scholarship, GETA Graduate School grant, Best Paper Award, and Young Researcher Award at EuRAD. Recently, he has focused on efficiency in LLMs and multi-modal models: compression, NAS-like acceleration, novel architectures, and adaptive/conditional inference. His past research has led to several NVIDIA product integrations: hand, body, and facial keypoint estimation and recognition in DriveIX, Broadcast, Omniverse, Maxine; efficient vision backbones in TAO, developed compression techniques in TAO, NVIDIA AV, TRT Model Optimization; and small in-game LLMs.
+                    </div>
                 </li>
             </ul>
         </div>
