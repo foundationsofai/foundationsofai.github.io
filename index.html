@@ -56,7 +56,7 @@
         }
         .schedule h3 {
             color: #003057;
-            font-size: 1.8em;
+            font-size: 2em;
             text-align: center;
             margin-bottom: 30px;
             border-bottom: 2px solid #B3A369;
@@ -78,25 +78,35 @@
             transform: translateY(-5px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
-        .schedule .speaker {
-            font-size: 1.4em;
-            font-weight: bold;
-            color: #003057;
-            margin-bottom: 5px;
-            display: block;
-        }
-        .schedule .affiliation {
-            font-style: italic;
-            color: #666;
+        .schedule .speaker,
+        .schedule .affiliation,
+        .schedule .date-time,
+        .schedule .location,
+        .schedule .topic {
+            font-size: 1.2em;
             margin-bottom: 10px;
             display: block;
         }
-        .schedule .date, .schedule .time, .schedule .location {
-            margin-bottom: 5px;
-            display: block;
+        .schedule .speaker {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #003057;
+        }
+        .schedule .affiliation {
+            color: #666;
+            /* Remove the italic style */
+            font-style: normal;
+        }
+        .schedule .date-time,
+        .schedule .location {
+            background-color: #B3A369;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
         }
         .schedule .location a {
-            color: #B3A369;
+            color: white;
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -106,19 +116,22 @@
         }
         .schedule .topic {
             font-weight: bold;
+            color: #003057;
             margin-top: 15px;
-            margin-bottom: 10px;
-            display: block;
         }
         .schedule .abstract, .schedule .bio {
-            margin-top: 15px;
+            margin-top: 20px;
             line-height: 1.6;
+            text-align: justify;
         }
         .schedule .abstract-title, .schedule .bio-title {
             font-weight: bold;
             color: #003057;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
             display: block;
+            font-size: 1.2em;
+            border-bottom: 1px solid #B3A369;
+            padding-bottom: 5px;
         }
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -153,6 +166,10 @@
         #mc_embed_signup .button:hover {
             background-color: #003057;
         }
+        .schedule .emoji {
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
     </style>
 </head>
 <body>
@@ -169,22 +186,21 @@
             <h3>Speaker Schedule and Abstracts</h3>
             <ul>
                 <li>
-                    <span class="speaker">Pavlo Molchanov</span>
-                    <span class="affiliation">NVIDIA Research</span>
-                    <span class="date">Thursday, October 10th, 2024</span>
-                    <span class="time">12 PM - 1 PM</span>
+                    <span class="speaker"><span class="emoji">🎤</span>Pavlo Molchanov</span>
+                    <span class="affiliation"><span class="emoji">🏛️</span>NVIDIA Research</span>
+                    <span class="date-time"><span class="emoji">📅</span>Thursday, October 10th, 2024 | 12 PM - 1 PM</span>
                     <span class="location">
-                        <a href="https://maps.app.goo.gl/F2zGTanrUPGp1hTY6" target="_blank">B5 Classroom in Boggs</a> & 
-                        <a href="https://gatech.zoom.us/j/92521086871?pwd=KjOr5lQWhjeFKJZxsXfKWd4FOV940m.1" target="_blank">Zoom</a>
+                        <span class="emoji">📍</span><a href="https://maps.app.goo.gl/F2zGTanrUPGp1hTY6" target="_blank">B5 Classroom in Boggs</a> | 
+                        <span class="emoji">💻</span><a href="https://gatech.zoom.us/j/92521086871?pwd=KjOr5lQWhjeFKJZxsXfKWd4FOV940m.1" target="_blank">Zoom</a>
                     </span>
-                    <span class="topic">Efficiency in Large Language Models with Post-Training Compression</span>
+                    <span class="topic"><span class="emoji">📚</span>Efficiency in Large Language Models with Post-Training Compression</span>
                     <div class="abstract">
-                        <span class="abstract-title">Abstract:</span>
+                        <span class="abstract-title"><span class="emoji">📝</span>Abstract</span>
                         Training large language models (LLMs) for various deployment scales and sizes traditionally involves training each variant from scratch, a process that is highly compute-intensive. In this talk, we explore three key techniques to significantly enhance LLM efficiency: (1) pruning and distillation, (2) Flexible LLM architecture with the Many-In-One concept, and (3) an advanced Parameter Efficient Finetuning Technique. Pruning and distillation can reduce pretraining costs by up to 40x, delivering models that are up to 16% more accurate than those trained from scratch. The Flexible LLM architecture allows the transformation of a single LLM into an infinite number of smaller sub-models, streamlining deployment across various applications. Lastly, we will discuss DoRa, a state-of-the-art PEFT method based on weight decomposition, enabling efficient model fine-tuning with limited data.
                     </div>
                     <div class="bio">
-                        <span class="bio-title">Bio:</span>
-                        Pavlo Molchanov is a Distinguished Research Scientist and Team Manager at <a href="https://research.nvidia.com/home" target="_blank">NVIDIA Research</a>. Since 2023, he has been leading the Deep Learning Efficiency Team. He obtained a PhD from Tampere University of Technology, Finland, in 2014. During his studies, he received the Nokia Foundation Scholarship, GETA Graduate School grant, Best Paper Award, and Young Researcher Award at EuRAD. Recently, he has focused on efficiency in LLMs and multi-modal models: compression, NAS-like acceleration, novel architectures, and adaptive/conditional inference. His past research has led to several NVIDIA product integrations: hand, body, and facial keypoint estimation and recognition in <a href="https://blogs.nvidia.com/blog/drive-ix-ecosystem/" target="_blank">DriveIX</a>, <a href="https://www.nvidia.com/en-us/geforce/broadcasting/broadcast-app/?ncid=pa-srch-goog-47075&gad_source=1&gclid=CjwKCAjwjqWzBhAqEiwAQmtgT_gPDTWhu4EQFQg4hmf5OqWMT7zWPvjnPAE7ZkicwT8NAHbT0ITyBBoCgEEQAvD_BwE#cid=gf45_pa-srch-goog_en-us" target="_blank">Broadcast</a>, <a href="https://www.nvidia.com/en-us/omniverse/" target="_blank">Omniverse</a>, <a href="https://developer.nvidia.com/maxine" target="_blank">Maxine</a>; efficient vision backbones in <a href="https://developer.nvidia.com/tao-toolkit" target="_blank">TAO</a>, developed compression techniques in <a href="https://developer.nvidia.com/tao-toolkit" target="_blank">TAO</a>, <a href="https://developer.nvidia.com/drive" target="="_blank"> NVIDIA AV</a>, <a href="https://github.com/NVIDIA/TensorRT-Model-Optimizer" target="_blank">TRT Model Optimization</a>; and small <a href="https://nvidianews.nvidia.com/news/digital-humans-ace-generative-ai-microservices" target="_blank"></a>in-game LLMs</a>.
+                        <span class="bio-title"><span class="emoji">👤</span>Bio</span>
+                        Pavlo Molchanov is a Distinguished Research Scientist and Team Manager at NVIDIA Research. Since 2023, he has been leading the Deep Learning Efficiency Team. He obtained a PhD from Tampere University of Technology, Finland, in 2014. During his studies, he received the Nokia Foundation Scholarship, GETA Graduate School grant, Best Paper Award, and Young Researcher Award at EuRAD. Recently, he has focused on efficiency in LLMs and multi-modal models: compression, NAS-like acceleration, novel architectures, and adaptive/conditional inference. His past research has led to several NVIDIA product integrations: hand, body, and facial keypoint estimation and recognition in DriveIX, Broadcast, Omniverse, Maxine; efficient vision backbones in TAO, developed compression techniques in TAO, NVIDIA AV, TRT Model Optimization; and small in-game LLMs.
                     </div>
                 </li>
             </ul>
