@@ -170,6 +170,70 @@
             margin-right: 10px;
             font-size: 1.2em;
         }
+        .organizers {
+            background-color: #f8f8f8;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        .organizers h3 {
+            color: #003057;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #B3A369;
+            padding-bottom: 10px;
+        }
+
+        .organizer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .organizer {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .organizer:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .organizer h4 {
+            color: #003057;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .organizer .title {
+            color: #B3A369;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .organizer a {
+            color: #003057;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .organizer a:hover {
+            color: #B3A369;
+            text-decoration: underline;
+        }
+
+        .organizer .research-areas {
+            margin-top: 15px;
+            font-style: italic;
+            color: #666;
+        }
     </style>
 </head>
 <body>
@@ -230,6 +294,27 @@
                     </div>
                 </div>
             </form>
+        </div>
+    </div>
+
+    <!-- Add this new section for organizers -->
+    <div class="organizers fade-in">
+        <h3>Organizers</h3>
+        <div class="organizer-grid">
+            <div class="organizer">
+                <h4>Yingyan (Celine) Lin</h4>
+                <p class="title">Associate Professor</p>
+                <p><a href="mailto:celine.lin@gatech.edu">celine.lin@gatech.edu</a></p>
+                <p><a href="https://eiclab.scs.gatech.edu/" target="_blank">https://eiclab.scs.gatech.edu/</a></p>
+                <p class="research-areas">Research Areas: Efficient machine learning through cross-layer innovations</p>
+            </div>
+            <div class="organizer">
+                <h4>Vijay Ganesh</h4>
+                <p class="title">Professor</p>
+                <p><a href="mailto:vganesh@gatech.edu">vganesh@gatech.edu</a></p>
+                <p><a href="https://vganesh1.github.io/" target="_blank">https://vganesh1.github.io/</a></p>
+                <p class="research-areas">Research Areas: SAT/SMT solvers, combinations of machine learning and automated reasoning, AI, software engineering, security, combinatorial mathematics, automated scientific discovery</p>
+            </div>
         </div>
     </div>
 
