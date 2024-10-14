@@ -234,6 +234,43 @@
             font-style: italic;
             color: #666;
         }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .tab-button {
+            background-color: #f1f1f1;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+            border-radius: 5px 5px 0 0;
+            margin: 0 5px;
+        }
+
+        .tab-button:hover {
+            background-color: #ddd;
+        }
+
+        .tab-button.active {
+            background-color: #B3A369;
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 6px 12px;
+            border-top: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -248,26 +285,56 @@
         </div>
         <div class="schedule fade-in">
             <h3>Speaker Schedule and Abstracts</h3>
-            <ul>
-                <li>
-                    <span class="speaker"><span class="emoji">🎤</span><a href="https://www.pmolchanov.com/" target="_blank">Pavlo Molchanov</a></span>
-                    <span class="affiliation"><span class="emoji">🏛️</span>NVIDIA Research</span>
-                    <span class="date-time"><span class="emoji">📅</span>Thursday, October 10th, 2024 | 12 PM - 1 PM (EDT) </span>
-                    <span class="location">
-                        <span class="emoji">📍</span><a href="https://maps.app.goo.gl/F2zGTanrUPGp1hTY6" target="_blank">B5 Classroom in Boggs</a> | 
-                        <span class="emoji">💻</span><a href="https://gatech.zoom.us/j/92521086871?pwd=KjOr5lQWhjeFKJZxsXfKWd4FOV940m.1" target="_blank">Zoom</a>
-                    </span>
-                    <span class="topic"><span class="emoji">📚</span>Talk Title: Efficiency in Large Language Models with Post-Training Compression</span>
-                    <div class="abstract">
-                        <span class="abstract-title"><span class="emoji">📝</span>Abstract</span>
-                        Training large language models (LLMs) for various deployment scales and sizes traditionally involves training each variant from scratch, a process that is highly compute-intensive. In this talk, we explore three key techniques to significantly enhance LLM efficiency: (1) pruning and distillation, (2) Flexible LLM architecture with the Many-In-One concept, and (3) an advanced Parameter Efficient Finetuning Technique. Pruning and distillation can reduce pretraining costs by up to 40x, delivering models that are up to 16% more accurate than those trained from scratch. The Flexible LLM architecture allows the transformation of a single LLM into an infinite number of smaller sub-models, streamlining deployment across various applications. Lastly, we will discuss DoRa, a state-of-the-art parameter-efficient fine-tuning method based on weight decomposition, enabling efficient model fine-tuning with limited data.
-                    </div>
-                    <div class="bio">
-                        <span class="bio-title"><span class="emoji">👤</span>Bio</span>
-                        Pavlo Molchanov is a Distinguished Research Scientist and Team Manager at <a href="https://research.nvidia.com/home" target="_blank">NVIDIA Research</a>. Since 2023, he has been leading the <a href="https://nv-dler.github.io/" target="_blank">Deep Learning Efficiency Team</a>. He obtained a PhD from Tampere University of Technology, Finland, in 2014. During his studies, he received the Nokia Foundation Scholarship, GETA Graduate School grant, Best Paper Award, and Young Researcher Award at EuRAD. Recently, he has focused on efficiency in LLMs and multi-modal models: compression, NAS-like acceleration, novel architectures, and adaptive/conditional inference. His past research has led to several NVIDIA product integrations: hand, body, and facial keypoint estimation and recognition in <a href="https://blogs.nvidia.com/blog/drive-ix-ecosystem/" target="_blank">DriveIX</a>, <a href="https://www.nvidia.com/en-us/geforce/broadcasting/broadcast-app/?ncid=pa-srch-goog-47075&gad_source=1&gclid=CjwKCAjwjqWzBhAqEiwAQmtgT_gPDTWhu4EQFQg4hmf5OqWMT7zWPvjnPAE7ZkicwT8NAHbT0ITyBBoCgEEQAvD_BwE#cid=gf45_pa-srch-goog_en-us" target="_blank">Broadcast</a>, <a href="https://www.nvidia.com/en-us/omniverse/" target="_blank">Omniverse</a>, <a href="https://developer.nvidia.com/maxine" target="_blank">Maxine</a>; efficient vision backbones in <a href="https://developer.nvidia.com/tao-toolkit" target="_blank">TAO</a>, developed compression techniques in <a href="https://developer.nvidia.com/tao-toolkit" target="_blank">TAO</a>, <a href="https://developer.nvidia.com/drive" target="_blank">NVIDIA AV</a>, <a href="https://github.com/NVIDIA/TensorRT-Model-Optimizer" target="_blank">TRT Model Optimization</a>; and small <a href="https://nvidianews.nvidia.com/news/digital-humans-ace-generative-ai-microservices" target="_blank">in-game LLMs</a>.
-                    </div>
-                </li>
-            </ul>
+            <div class="tabs">
+                <button class="tab-button" onclick="openTab(event, 'invited-speakers')">Speakers</button>
+                <button class="tab-button active" onclick="openTab(event, 'student-speakers')">Student Speakers</button>
+            </div>
+            
+            <div id="invited-speakers" class="tab-content">
+                <ul>
+                    <li>
+                        <!-- Existing Pavlo Molchanov speaker info -->
+                        <span class="speaker"><span class="emoji">🎤</span><a href="https://www.pmolchanov.com/" target="_blank">Pavlo Molchanov</a></span>
+                        <span class="affiliation"><span class="emoji">🏛️</span>NVIDIA Research</span>
+                        <span class="date-time"><span class="emoji">📅</span>Thursday, October 10th, 2024 | 12 PM - 1 PM (EDT) </span>
+                        <span class="location">
+                            <span class="emoji">📍</span><a href="https://maps.app.goo.gl/F2zGTanrUPGp1hTY6" target="_blank">B5 Classroom in Boggs</a> | 
+                            <span class="emoji">💻</span><a href="https://gatech.zoom.us/j/92521086871?pwd=KjOr5lQWhjeFKJZxsXfKWd4FOV940m.1" target="_blank">Zoom</a>
+                        </span>
+                        <span class="topic"><span class="emoji">📚</span>Talk Title: Efficiency in Large Language Models with Post-Training Compression</span>
+                        <div class="abstract">
+                            <span class="abstract-title"><span class="emoji">📝</span>Abstract</span>
+                            Training large language models (LLMs) for various deployment scales and sizes traditionally involves training each variant from scratch, a process that is highly compute-intensive. In this talk, we explore three key techniques to significantly enhance LLM efficiency: (1) pruning and distillation, (2) Flexible LLM architecture with the Many-In-One concept, and (3) an advanced Parameter Efficient Finetuning Technique. Pruning and distillation can reduce pretraining costs by up to 40x, delivering models that are up to 16% more accurate than those trained from scratch. The Flexible LLM architecture allows the transformation of a single LLM into an infinite number of smaller sub-models, streamlining deployment across various applications. Lastly, we will discuss DoRa, a state-of-the-art parameter-efficient fine-tuning method based on weight decomposition, enabling efficient model fine-tuning with limited data.
+                        </div>
+                        <div class="bio">
+                            <span class="bio-title"><span class="emoji">👤</span>Bio</span>
+                            Pavlo Molchanov is a Distinguished Research Scientist and Team Manager at <a href="https://research.nvidia.com/home" target="_blank">NVIDIA Research</a>. Since 2023, he has been leading the <a href="https://nv-dler.github.io/" target="_blank">Deep Learning Efficiency Team</a>. He obtained a PhD from Tampere University of Technology, Finland, in 2014. During his studies, he received the Nokia Foundation Scholarship, GETA Graduate School grant, Best Paper Award, and Young Researcher Award at EuRAD. Recently, he has focused on efficiency in LLMs and multi-modal models: compression, NAS-like acceleration, novel architectures, and adaptive/conditional inference. His past research has led to several NVIDIA product integrations: hand, body, and facial keypoint estimation and recognition in <a href="https://blogs.nvidia.com/blog/drive-ix-ecosystem/" target="_blank">DriveIX</a>, <a href="https://www.nvidia.com/en-us/geforce/broadcasting/broadcast-app/?ncid=pa-srch-goog-47075&gad_source=1&gclid=CjwKCAjwjqWzBhAqEiwAQmtgT_gPDTWhu4EQFQg4hmf5OqWMT7zWPvjnPAE7ZkicwT8NAHbT0ITyBBoCgEEQAvD_BwE#cid=gf45_pa-srch-goog_en-us" target="_blank">Broadcast</a>, <a href="https://www.nvidia.com/en-us/omniverse/" target="_blank">Omniverse</a>, <a href="https://developer.nvidia.com/maxine" target="_blank">Maxine</a>; efficient vision backbones in <a href="https://developer.nvidia.com/tao-toolkit" target="_blank">TAO</a>, developed compression techniques in <a href="https://developer.nvidia.com/tao-toolkit" target="_blank">TAO</a>, <a href="https://developer.nvidia.com/drive" target="_blank">NVIDIA AV</a>, <a href="https://github.com/NVIDIA/TensorRT-Model-Optimizer" target="_blank">TRT Model Optimization</a>; and small <a href="https://nvidianews.nvidia.com/news/digital-humans-ace-generative-ai-microservices" target="_blank">in-game LLMs</a>.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div id="student-speakers" class="tab-content active">
+                <ul>
+                    <li>
+                        <span class="speaker"><span class="emoji">🎓</span>Jifan Zhang</span>
+                        <span class="affiliation"><span class="emoji">🏛️</span>University of Wisconsin-Madison</span>
+                        <span class="date-time"><span class="emoji">📅</span>Tuesday, October 29th, 2024 | 12:30 PM - 1:30 PM (EDT)</span>
+                        <span class="location">
+                            <span class="emoji">📍</span><a href="https://maps.app.goo.gl/w5uYYBf4nTMjPuQU7" target="_blank">C341 Classroom in Van Leer</a>
+                        </span>
+                        <span class="topic"><span class="emoji">📚</span>Talk Title: Learning from Black-Box General Intelligences</span>
+                        <div class="abstract">
+                            <span class="abstract-title"><span class="emoji">📝</span>Abstract</span>
+                            General intelligences, both human and artificial (e.g. LLMs), offer remarkable flexibility in handling diverse tasks. However, directly leveraging these general intelligences at scale is prohibitively expensive. This raises the key question of how we can efficiently train lightweight, specialized models for specific applications by learning from and distilling the knowledge of black-box general intelligences. In this talk, I will discuss the label-efficient learning paradigms that have been developed over the past two decades, covering techniques in active learning, semi-supervised learning, and transfer learning. I will highlight scenarios and approaches that have proven empirically effective for label-efficient learning, including fine-tuning large pretrained models, uncertainty sampling and handling class imbalance. I will conclude by discussing the challenges and growing importance of label-efficient learning in an open-world scenario. This talk will provide an overview of the key ideas, results, and open problems in learning efficiently from black-box general intelligences.
+                        </div>
+                        <div class="bio">
+                            <span class="bio-title"><span class="emoji">👤</span>Bio</span>
+                            Jifan Zhang is a Ph.D. candidate in computer science at the University of Wisconsin, working with Robert Nowak. He obtained his M.S. and B.S. degrees in computer science from the University of Washington. During that time, he was fortunate to be advised by Kevin Jamieson, Lalit Jain, Tanner Schmidt, Dieter Fox, and Zachary Tatlock. His research focuses on both applied and theoretical perspectives of Machine Learning, primarily along the following axes.
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
 
         <div id="mc_embed_signup" class="fade-in">
@@ -326,6 +393,24 @@
             fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';fnames[6]='COMPANY';ftypes[6]='text';
         }(jQuery));
         var $mcj = jQuery.noConflict(true);
+    </script>
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabContent, tabButtons;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Add this line to show student speakers by default
+        document.getElementById("student-speakers").style.display = "block";
     </script>
 </body>
 </html>
