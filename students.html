@@ -41,6 +41,34 @@
             color: #B3A369;
             margin-bottom: 20px;
         }
+        .sponsorship {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+        }
+        .sponsorship img {
+            max-width: 300px; /* Set the size of the image */
+            vertical-align: middle; /* Align the image with the text */
+            margin-right: 10px; /* Space between the image and text */
+        }
+        .student-button {
+            display: block;
+            width: 200px;
+            margin: 30px auto; /* Center the button */
+            padding: 15px 20px;
+            background-color: #B3A369;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .student-button:hover {
+            background-color: #003057;
+        }
         .intro {
             background-color: rgba(255, 255, 255, 0.8);
             padding: 20px;
@@ -313,8 +341,9 @@
 <body>
     <div class="banner"></div>
     <div class="container">
-        <!-- Move the sponsorship section to the top -->
+        <!-- Add the sponsorship section at the top -->
         <div class="sponsorship fade-in">
+            <img src="IDEaS.png" alt="IDEaS Logo"> <!-- Include the IDEaS logo -->
             <p>Sponsored by <a href="https://research.gatech.edu/energy/ideas" target="_blank">The Institute for Data Engineering and Science (IDEaS)</a>.</p>
         </div>
 
@@ -375,8 +404,8 @@
             </form>
         </div>
 
-        <!-- Move the main speakers link to the end -->
-        <a href="index.html" class="main-page-button fade-in">View Main Speakers</a>
+        <!-- Ensure the button is displayed properly -->
+        <a href="index.html" class="student-button fade-in">View Main Speakers</a>
     </div>
 
     <!-- Add this new section for organizers -->
