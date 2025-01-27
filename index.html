@@ -314,6 +314,25 @@
             color: #B3A369;
             text-decoration: underline;
         }
+
+        .speaker-info {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+
+        .speaker-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .speaker-text {
+            flex: 1;
+        }
     </style>
 </head>
 <body>
@@ -346,7 +365,8 @@
                     <span class="location">
                         <span class="emoji">📍</span><a href="https://maps.app.goo.gl/VGF8rHHoFPQFJqYS7" target="_blank">Klaus 1447</a>
                     </span>
-                    <span class="topic"><span class="emoji">📚</span>Talk Title: Scientific Machine Learning: Bridging AI and Physical Sciences</span>
+                    <span class="topic"><span class="emoji">📚</span>Talk Title: Scientific Machine Learning in the New Era of AI: Reasoning, Foundations, Visualization
+                </span>
                     <div class="abstract">
                         <span class="abstract-title"><span class="emoji">📝</span>Abstract</span>
                         The rapid advancements in artificial intelligence (AI), propelled by data-centric scaling laws, have significantly transformed our understanding and generation of both vision and language. However, natural media, such as images, videos, and languages, represent only a fraction of the modalities we encounter, leaving much of the physical world underexplored. We propose that Scientific Machine Learning (SciML) offers a knowledge-driven framework that complements data-driven AI, enabling us to better understand, visualize, and interact with the diverse complexities of the physical world.
@@ -355,7 +375,12 @@
                     </div>
                     <div class="bio">
                         <span class="bio-title"><span class="emoji">👤</span>Bio</span>
-                        Dr. Wuyang Chen is a tenure-track Assistant Professor in Computing Science at Simon Fraser University. Previously, he was a postdoctoral researcher in Statistics at the University of California, Berkeley. He obtained his Ph.D. in Electrical and Computer Engineering from the University of Texas at Austin in 2023. Dr. Chen's research focuses on scientific machine learning, theoretical understanding of deep networks, and related applications in foundation models, computer vision, and AutoML. He also works on domain adaptation/generalization and self-supervised learning. Dr. Chen has published papers at CVPR, ECCV, ICLR, ICML, NeurIPS, and other top conferences. Dr. Chen's research has been recognized by NSF (National Science Foundation) newsletter in 2022, INNS Doctoral Dissertation Award and the iSchools Doctoral Dissertation Award in 2024, and AAAI New Faculty Highlights in 2025. Dr. Chen is the host of the Foundation Models for Science workshop at NeurIPS 2024 and co-organized the 4th and 5th versions of the UG2+ workshop and challenge at CVPR in 2021 and 2022. He also serves on the board of the One World Seminar Series on the Mathematics of Machine Learning.
+                        <div class="speaker-info">
+                            <img src="wuyang-chen.jpg" alt="Dr. Wuyang Chen" class="speaker-image">
+                            <div class="speaker-text">
+                                Dr. Wuyang Chen is a tenure-track Assistant Professor in Computing Science at Simon Fraser University. Previously, he was a postdoctoral researcher in Statistics at the University of California, Berkeley. He obtained his Ph.D. in Electrical and Computer Engineering from the University of Texas at Austin in 2023. Dr. Chen's research focuses on scientific machine learning, theoretical understanding of deep networks, and related applications in foundation models, computer vision, and AutoML. He also works on domain adaptation/generalization and self-supervised learning. Dr. Chen has published papers at CVPR, ECCV, ICLR, ICML, NeurIPS, and other top conferences. Dr. Chen's research has been recognized by NSF (National Science Foundation) newsletter in 2022, INNS Doctoral Dissertation Award and the iSchools Doctoral Dissertation Award in 2024, and AAAI New Faculty Highlights in 2025. Dr. Chen is the host of the Foundation Models for Science workshop at NeurIPS 2024 and co-organized the 4th and 5th versions of the UG2+ workshop and challenge at CVPR in 2021 and 2022. He also serves on the board of the One World Seminar Series on the Mathematics of Machine Learning.
+                            </div>
+                        </div>
                     </div>
                 </li>
                 <li>
