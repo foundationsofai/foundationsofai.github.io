@@ -54,27 +54,47 @@
             border-radius: 15px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .schedule h3 {
+        .schedule-main-header {
+            text-align: center;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.85rem;
+            border-bottom: 2px solid #B3A369;
+        }
+        .schedule-main-header h3 {
             color: #003057;
             font-size: 2em;
             text-align: center;
-            margin-bottom: 30px;
-            border-bottom: 2px solid #B3A369;
-            padding-bottom: 10px;
+            margin: 0 0 0.5rem 0;
+            padding: 0;
+            border: none;
+        }
+        .schedule-main-subtitle {
+            margin: 0 auto;
+            max-width: 40rem;
+            font-size: 0.98rem;
+            color: #555;
+            line-height: 1.45;
+        }
+        .schedule-body {
+            margin: 0;
+        }
+        .schedule-detailed {
+            margin-top: 0.25rem;
         }
         .schedule ul {
             list-style-type: none;
             padding: 0;
         }
-        .schedule li {
+        .schedule-detailed li {
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             padding: 25px;
             margin-bottom: 30px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            scroll-margin-top: 1rem;
         }
-        .schedule li:hover {
+        .schedule-detailed li:hover {
             transform: translateY(-5px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
@@ -333,6 +353,165 @@
         .speaker-text {
             flex: 1;
         }
+
+        .talk-index {
+            background: linear-gradient(145deg, #ffffff 0%, #f5f7fa 100%);
+            border: 1px solid rgba(179, 163, 105, 0.4);
+            border-radius: 12px;
+            padding: 1.25rem 1.35rem 1.4rem;
+            margin: 0 0 2rem 0;
+            box-shadow: 0 2px 10px rgba(0, 48, 87, 0.07);
+        }
+        .talk-index .talk-index-heading {
+            margin: 0 0 1.1rem 0;
+            font-size: 1.2rem;
+            color: #003057;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .talk-index .talk-index-heading::before {
+            content: "";
+            width: 4px;
+            height: 1.15em;
+            background: #B3A369;
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+        .talk-index-section {
+            margin-bottom: 1.15rem;
+        }
+        .talk-index-section:last-child {
+            margin-bottom: 0;
+        }
+        .talk-index-section-title {
+            margin: 0 0 0.5rem 0;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: #B3A369;
+            font-weight: bold;
+        }
+        .talk-index ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .talk-index li {
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+            font-size: 0.95rem;
+        }
+        .talk-index-link {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0.55rem 0.85rem;
+            border-radius: 8px;
+            border: 1px solid rgba(179, 163, 105, 0.55);
+            background: #fff;
+            box-shadow: 0 1px 3px rgba(0, 48, 87, 0.08);
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+        }
+        .talk-index-num {
+            flex-shrink: 0;
+            min-width: 1.85rem;
+            height: 1.85rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.82rem;
+            font-weight: 800;
+            color: #003057;
+            background: rgba(179, 163, 105, 0.32);
+            border-radius: 6px;
+            border: 1px solid rgba(179, 163, 105, 0.65);
+            line-height: 1;
+        }
+        .talk-index-link:hover .talk-index-num {
+            background: rgba(255, 255, 255, 0.22);
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.55);
+        }
+        .talk-index-row-inner {
+            flex: 1;
+            min-width: 0;
+        }
+        .talk-index-link:hover {
+            background: #B3A369;
+            border-color: #B3A369;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 48, 87, 0.14);
+        }
+        .talk-index-link:focus-visible {
+            outline: 2px solid #003057;
+            outline-offset: 2px;
+        }
+        .talk-index-name {
+            display: block;
+            font-weight: 700;
+            color: #003057;
+            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
+        }
+        .talk-index-legend {
+            margin: -0.35rem 0 1rem 0;
+            font-size: 0.82rem;
+            color: #666;
+            line-height: 1.4;
+        }
+        .talk-index-link:hover .talk-index-name {
+            color: #fff;
+        }
+        .talk-index .talk-index-meta {
+            font-size: 0.8rem;
+            color: #666;
+            line-height: 1.35;
+        }
+        .talk-index-link:hover .talk-index-meta {
+            color: rgba(255, 255, 255, 0.95);
+        }
+        .talk-index .talk-index-aff {
+            color: #555;
+        }
+        .talk-index-link:hover .talk-index-aff {
+            color: rgba(255, 255, 255, 0.95);
+        }
+        .talk-index .talk-index-sep {
+            color: #aaa;
+            padding: 0 0.2rem;
+        }
+        .talk-index-link:hover .talk-index-sep {
+            color: rgba(255, 255, 255, 0.65);
+        }
+        .talk-index-grid-past {
+            columns: 1;
+            column-gap: 1.5rem;
+        }
+        @media (min-width: 600px) {
+            .talk-index-grid-past {
+                columns: 2;
+            }
+        }
+        @media (min-width: 960px) {
+            .talk-index-grid-past {
+                columns: 3;
+            }
+        }
+        .talk-index-grid-past li {
+            break-inside: avoid;
+        }
+        .talk-index-link:hover .talk-index-date {
+            color: rgba(255, 255, 255, 0.88);
+        }
+        .talk-index-meta .talk-index-date {
+            white-space: nowrap;
+        }
     </style>
 </head>
 <body>
@@ -356,13 +535,57 @@
         </div>
 
         <div class="schedule fade-in">
-            <h3>Speaker Schedule and Abstracts</h3>
-            
+            <section class="schedule-body" aria-labelledby="schedule-main-title">
+                <header class="schedule-main-header">
+                    <h3 id="schedule-main-title">Speaker Schedule and Abstracts</h3>
+                    <p class="schedule-main-subtitle">Quick index and full abstracts for each talk.</p>
+                </header>
+
+                <nav class="talk-index" aria-labelledby="jump-to-talk-title">
+                    <h4 class="talk-index-heading" id="jump-to-talk-title">Jump to a talk</h4>
+                    <p class="talk-index-legend">Numbers are chronological: <strong>1</strong> is the earliest talk in the series. In multi-column layouts, read top-to-bottom within each column, then move to the next column.</p>
+                    <div class="talk-index-section">
+                        <p class="talk-index-section-title">Upcoming</p>
+                        <ul>
+                            <li><a class="talk-index-link" href="#talk-subbarao-kambhampati-2026-03-30"><span class="talk-index-num">22</span><span class="talk-index-row-inner"><span class="talk-index-name">Subbarao Kambhampati</span><span class="talk-index-meta"><span class="talk-index-aff">Arizona State University</span><span class="talk-index-sep"> · </span><span class="talk-index-date">Mar 30, 2026</span></span></span></a></li>
+                            <li><a class="talk-index-link" href="#talk-thomas-ball-2026-04-06"><span class="talk-index-num">23</span><span class="talk-index-row-inner"><span class="talk-index-name">Thomas Ball</span><span class="talk-index-meta"><span class="talk-index-aff">Lancaster University / University of Washington</span><span class="talk-index-sep"> · </span><span class="talk-index-date">Apr 6, 2026</span></span></span></a></li>
+                            <li><a class="talk-index-link" href="#talk-isil-dillig-2026-04-08"><span class="talk-index-num">24</span><span class="talk-index-row-inner"><span class="talk-index-name">Isil Dillig</span><span class="talk-index-meta"><span class="talk-index-aff">University of Texas at Austin</span><span class="talk-index-sep"> · </span><span class="talk-index-date">Apr 8, 2026</span></span></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="talk-index-section">
+                        <p class="talk-index-section-title">Past</p>
+                        <ul class="talk-index-grid-past">
+                            <li><a class="talk-index-link" href="#talk-satish-chandra-2026-03-06"><span class="talk-index-num">21</span><span class="talk-index-row-inner"><span class="talk-index-name">Satish Chandra</span><span class="talk-index-meta"><span class="talk-index-aff">Meta</span><span class="talk-index-sep"> · </span><span class="talk-index-date">Mar 6, 2026</span></span></span></a></li>
+                            <li><a class="talk-index-link" href="#talk-lisa-carbone-2026-02-26"><span class="talk-index-num">20</span><span class="talk-index-row-inner"><span class="talk-index-name">Lisa Carbone</span><span class="talk-index-meta"><span class="talk-index-aff">Rutgers University</span><span class="talk-index-sep"> · </span><span class="talk-index-date">Feb 26, 2026</span></span></span></a></li>
+                            <li><a class="talk-index-link" href="#talk-sanjit-seshia-2026-02-19"><span class="talk-index-num">19</span><span class="talk-index-row-inner"><span class="talk-index-name">Sanjit A. Seshia</span><span class="talk-index-meta"><span class="talk-index-aff">University of California, Berkeley</span><span class="talk-index-sep"> · </span><span class="talk-index-date">Feb 19, 2026</span></span></span></a></li>
+                            <li><a class="talk-index-link" href="#talk-walter-moreira-2026-02-05"><span class="talk-index-num">18</span><span class="talk-index-row-inner"><span class="talk-index-name">Walter Moreira</span><span class="talk-index-meta"><span class="talk-index-aff">University of Texas at Austin</span><span class="talk-index-sep"> · </span><span class="talk-index-date">Feb 5, 2026</span></span></span></a></li>
+                            <li><a class="talk-index-link" href="#talk-joe-stubbs-2026-02-03"><span class="talk-index-num">17</span><span class="talk-index-row-inner"><span class="talk-index-name">Joe Stubbs</span><span class="talk-index-meta"><span class="talk-index-aff">University of Texas at Austin</span><span class="talk-index-sep"> · </span><span class="talk-index-date">Feb 3, 2026</span></span></span></a></li>
+                            <li><a class="talk-index-link" href="#talk-pat-langley-2026-01-30"><span class="talk-index-num">16</span><span class="talk-index-row-inner"><span class="talk-index-name">Pat Langley</span><span class="talk-index-meta"><span class="talk-index-aff">Georgia Tech Research Institute</span><span class="talk-index-sep"> · </span><span class="talk-index-date">Jan 30, 2026</span></span></span></a></li>
+                            <li><a class="talk-index-link" href="#talk-karthik-pattabiraman-2025-11-06"><span class="talk-index-num">15</span><span class="talk-index-row-inner"><span class="talk-index-name">Karthik Pattabiraman</span><span class="talk-index-meta"><span class="talk-index-aff">University of British Columbia (ECE)</span><span class="talk-index-sep"> · </span><span class="talk-index-date">Nov 6, 2025</span></span></span></a></li>
+                            <li><a class="talk-index-link" href="#talk-grant-schoenebeck-2025-10-16"><span class="talk-index-num">14</span><span class="talk-index-row-inner"><span class="talk-index-name">Grant Schoenebeck</span><span class="talk-index-meta"><span class="talk-index-aff">University of Michigan, School of Information</span><span class="talk-index-sep"> · </span><span class="talk-index-date">Oct 16, 2025</span></span></span></a></li>
+                            <li><a class="talk-index-link" href="#talk-irfan-essa-2025-10-07"><span class="talk-index-num">13</span><span class="talk-index-row-inner"><span class="talk-index-name">Irfan Essa</span><span class="talk-index-meta"><span class="talk-index-aff">Georgia Tech, School of Interactive Computing</span><span class="talk-index-sep"> · </span><span class="talk-index-date">Oct 7, 2025</span></span></span></a></li>
+                            <li><a class="talk-index-link" href="#talk-ali-sarhadi-2025-09-22"><span class="talk-index-num">12</span><span class="talk-index-row-inner"><span class="talk-index-name">Ali Sarhadi</span><span class="talk-index-meta"><span class="talk-index-aff">Georgia Tech, Earth &amp; Atmospheric Sciences</span><span class="talk-index-sep"> · </span><span class="talk-index-date">Sep 22, 2025</span></span></span></a></li>
+                            <li><a class="talk-index-link" href="#talk-ann-fitz-gerald-2025-09-08"><span class="talk-index-num">11</span><span class="talk-index-row-inner"><span class="talk-index-name">Ann Fitz-Gerald</span><span class="talk-index-meta"><span class="talk-index-aff">Balsillie School of International Affairs</span><span class="talk-index-sep"> · </span><span class="talk-index-date">Sep 8, 2025</span></span></span></a></li>
+                            <li><a class="talk-index-link" href="#talk-constantinos-dovrolis-2025-05-01"><span class="talk-index-num">10</span><span class="talk-index-row-inner"><span class="talk-index-name">Constantinos Dovrolis</span><span class="talk-index-meta"><span class="talk-index-aff">Georgia Tech, School of Computer Science</span><span class="talk-index-sep"> · </span><span class="talk-index-date">May 1, 2025</span></span></span></a></li>
+                            <li><a class="talk-index-link" href="#talk-kaiyu-yang-2025-04-29"><span class="talk-index-num">9</span><span class="talk-index-row-inner"><span class="talk-index-name">Kaiyu Yang</span><span class="talk-index-meta"><span class="talk-index-aff">Meta FAIR</span><span class="talk-index-sep"> · </span><span class="talk-index-date">Apr 29, 2025</span></span></span></a></li>
+                            <li><a class="talk-index-link" href="#talk-ben-zorn-2025-04-17"><span class="talk-index-num">8</span><span class="talk-index-row-inner"><span class="talk-index-name">Ben Zorn</span><span class="talk-index-meta"><span class="talk-index-aff">Microsoft Research</span><span class="talk-index-sep"> · </span><span class="talk-index-date">Apr 17, 2025</span></span></span></a></li>
+                            <li><a class="talk-index-link" href="#talk-kevin-leyton-brown-2025-04-04"><span class="talk-index-num">7</span><span class="talk-index-row-inner"><span class="talk-index-name">Kevin Leyton-Brown</span><span class="talk-index-meta"><span class="talk-index-aff">University of British Columbia</span><span class="talk-index-sep"> · </span><span class="talk-index-date">Apr 4, 2025</span></span></span></a></li>
+                            <li><a class="talk-index-link" href="#talk-jose-cambronero-2025-04-02"><span class="talk-index-num">6</span><span class="talk-index-row-inner"><span class="talk-index-name">José Cambronero</span><span class="talk-index-meta"><span class="talk-index-aff">Google</span><span class="talk-index-sep"> · </span><span class="talk-index-date">Apr 2, 2025</span></span></span></a></li>
+                            <li><a class="talk-index-link" href="#talk-mirco-giacobbe-2025-03-06"><span class="talk-index-num">5</span><span class="talk-index-row-inner"><span class="talk-index-name">Mirco Giacobbe</span><span class="talk-index-meta"><span class="talk-index-aff">University of Birmingham</span><span class="talk-index-sep"> · </span><span class="talk-index-date">Mar 6, 2025</span></span></span></a></li>
+                            <li><a class="talk-index-link" href="#talk-aishik-ghosh-2025-03-05"><span class="talk-index-num">4</span><span class="talk-index-row-inner"><span class="talk-index-name">Aishik Ghosh</span><span class="talk-index-meta"><span class="talk-index-aff">UC Irvine &amp; Berkeley Lab</span><span class="talk-index-sep"> · </span><span class="talk-index-date">Mar 5, 2025</span></span></span></a></li>
+                            <li><a class="talk-index-link" href="#talk-xia-ben-hu-2025-02-12"><span class="talk-index-num">3</span><span class="talk-index-row-inner"><span class="talk-index-name">Xia (Ben) Hu</span><span class="talk-index-meta"><span class="talk-index-aff">Rice University</span><span class="talk-index-sep"> · </span><span class="talk-index-date">Feb 12, 2025</span></span></span></a></li>
+                            <li><a class="talk-index-link" href="#talk-wuyang-chen-2025-02-07"><span class="talk-index-num">2</span><span class="talk-index-row-inner"><span class="talk-index-name">Wuyang Chen</span><span class="talk-index-meta"><span class="talk-index-aff">Simon Fraser University</span><span class="talk-index-sep"> · </span><span class="talk-index-date">Feb 7, 2025</span></span></span></a></li>
+                            <li><a class="talk-index-link" href="#talk-pavlo-molchanov-2024-10-10"><span class="talk-index-num">1</span><span class="talk-index-row-inner"><span class="talk-index-name">Pavlo Molchanov</span><span class="talk-index-meta"><span class="talk-index-aff">NVIDIA Research</span><span class="talk-index-sep"> · </span><span class="talk-index-date">Oct 10, 2024</span></span></span></a></li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="schedule-detailed" id="schedule-talk-details">
             <h4 style="color: #003057; margin: 30px 0 20px;">Future Talks</h4>
 
 
  <ul>
-                <li>
+                <li id="talk-subbarao-kambhampati-2026-03-30">
                     <span class="speaker"><span class="emoji">🎤</span><a href="https://rakaposhi.eas.asu.edu/" target="_blank">Subbarao Kambhampati</a></span>
                     <span class="affiliation"><span class="emoji">🏛️</span>Arizona State University</span>
                     <span class="date-time"><span class="emoji">📅</span>Monday, 30 March 2026 @ 2-3pm ET</span>
@@ -390,7 +613,7 @@ Subbarao Kambhampati is a professor of computer science at Arizona State Univers
              </ul>
 
  <ul>
-                <li>
+                <li id="talk-thomas-ball-2026-04-06">
                     <span class="speaker"><span class="emoji">🎤</span><a href="https://www.lancaster.ac.uk/scc/about-us/people/thomas-ball2" target="_blank">Thomas Ball</a></span>
                     <span class="affiliation"><span class="emoji">🏛️</span>Honorary Professor, Lancaster University / Affiliate Faculty, University of Washington</span>
                     <span class="date-time"><span class="emoji">📅</span>Monday, April 6, 2026 @ 4-5pm ET</span>
@@ -423,7 +646,7 @@ Thomas (Tom) Ball is a co-founder of the influential SLAM software model-checkin
              </ul>
 
  <ul>
-                <li>
+                <li id="talk-isil-dillig-2026-04-08">
                     <span class="speaker"><span class="emoji">🎤</span><a href="https://www.cs.utexas.edu/~isil/" target="_blank">Isil Dillig</a></span>
                     <span class="affiliation"><span class="emoji">🏛️</span>University of Texas, Austin</span>
                     <span class="date-time"><span class="emoji">📅</span>Wednesday, 8 April 2026 @ 3:30-4:30pm ET</span>
@@ -457,7 +680,7 @@ Isil Dillig is a Professor of Computer Science at the University of Texas at Aus
             <h4 style="color: #003057; margin: 30px 0 20px;">Past Talks</h4>
 
    <ul>
-                <li>
+                <li id="talk-satish-chandra-2026-03-06">
                     <span class="speaker"><span class="emoji">🎤</span><a href="https://sites.google.com/site/schandraacmorg/" target="_blank">Satish Chandra</a></span>
                     <span class="affiliation"><span class="emoji">🏛️</span>Meta</span>
                     <span class="date-time"><span class="emoji">📅</span>Friday, Mar 6th, 2026 | 1PM - 2PM (ET)</span>
@@ -484,7 +707,7 @@ Satish Chandra is a research scientist at Meta, where he applies machine learnin
              </ul>
 
              <ul>
-                <li>
+                <li id="talk-lisa-carbone-2026-02-26">
                     <span class="speaker"><span class="emoji">🎤</span><a href="https://lisacarbonemath.org/" target="_blank">Lisa Carbone</a></span>
                     <span class="affiliation"><span class="emoji">🏛️</span>Rutgers University</span>
                     <span class="date-time"><span class="emoji">📅</span>Thursday, Feb 26th, 2026 | 4:30PM - 5:30PM (ET)</span>
@@ -511,7 +734,7 @@ Lisa Carbone is a Professor of Mathematics at Rutgers University. She previously
              </ul>
 
                      <ul>
-                <li>
+                <li id="talk-sanjit-seshia-2026-02-19">
                     <span class="speaker"><span class="emoji">🎤</span><a href="https://people.eecs.berkeley.edu/~sseshia/" target="_blank">Sanjit A. Seshia</a></span>
                     <span class="affiliation"><span class="emoji">🏛️</span>University of California, Berkeley</span>
                     <span class="date-time"><span class="emoji">📅</span>Thursday, Feb 19th, 2026 | 2PM - 3PM (ET)</span>
@@ -539,7 +762,7 @@ Sanjit A. Seshia is the Cadence Founders Chair Professor in the Department of El
                 </li>
              </ul>
              <ul>
-                <li>
+                <li id="talk-walter-moreira-2026-02-05">
                     <span class="speaker"><span class="emoji">🎤</span><a href="" target="_blank">Walter Moreira</a></span>
                     <span class="affiliation"><span class="emoji">🏛️</span>University of Texas at Austin</span>
                     <span class="date-time"><span class="emoji">📅</span>Thursday, Feb 5th, 2026 | 4PM - 5PM (ET)</span>
@@ -565,7 +788,7 @@ Dr. Walter Moreira is a mathematician and software engineer that has experience 
              </ul>
 
              <ul>
-                <li>
+                <li id="talk-joe-stubbs-2026-02-03">
                     <span class="speaker"><span class="emoji">🎤</span><a href="https://tacc.utexas.edu/about/staff-directory/joe-stubbs/" target="_blank">Joe Stubbs</a></span>
                     <span class="affiliation"><span class="emoji">🏛️</span>University of Texas at Austin</span>
                     <span class="date-time"><span class="emoji">📅</span>Tuesday, Feb 3rd, 2026 | 4PM - 5PM (ET)</span>
@@ -590,7 +813,7 @@ Dr. Joe Stubbs is a Research Scientist at the University of Texas at Austin and 
                 </li>
              </ul>
                              <ul>
-                <li>
+                <li id="talk-pat-langley-2026-01-30">
                     <span class="speaker"><span class="emoji">🎤</span><a href="http://www.isle.org/~langley/" target="_blank">Pat Langley</a></span>
                     <span class="affiliation"><span class="emoji">🏛️</span>Georgia Tech Research Institute</span>
                     <span class="date-time"><span class="emoji">📅</span>Friday, Jan 30th, 2026 | 4PM - 5PM (ET)</span>
@@ -619,7 +842,7 @@ Dr. Pat Langley is a Principal Research Scientist at Georgia Tech Research Insti
 
 
              <ul>
-                <li>
+                <li id="talk-karthik-pattabiraman-2025-11-06">
                     <span class="speaker"><span class="emoji">🎤</span><a href="https://blogs.ubc.ca/karthik/" target="_blank">Karthik Pattabiraman</a></span>
                     <span class="affiliation"><span class="emoji">🏛️</span>Department of Electrical and Computer Engineering, University of British Columbia</span>
                     <span class="date-time"><span class="emoji">📅</span>Thursday, November 6, 2025  | 4PM - 5PM (ET)</span>
@@ -646,7 +869,7 @@ Karthik Pattabiraman is a Professor of Electrical and Computer Engineering (ECE)
              </ul>
 
         <ul>
-                <li>
+                <li id="talk-grant-schoenebeck-2025-10-16">
                     <span class="speaker"><span class="emoji">🎤</span><a href="https://schoeneb.people.si.umich.edu/" target="_blank">Grant Schoenebeck</a></span>
                     <span class="affiliation"><span class="emoji">🏛️</span>School of Information, University of Michigan</span>
                     <span class="date-time"><span class="emoji">📅</span>Thursday, October 16, 2025 | 4PM - 5PM (ET)</span>
@@ -673,7 +896,7 @@ His research is supported by the NSF including an NSF CAREER award.  Before comi
 
 
                 <ul>
-                <li>
+                <li id="talk-irfan-essa-2025-10-07">
                     <span class="speaker"><span class="emoji">🎤</span><a href="https://www.cc.gatech.edu/people/irfan-essa/" target="_blank">Irfan Essa</a></span>
                     <span class="affiliation"><span class="emoji">🏛️</span>School of Interactive Computing, Georgia Institute of Technology</span>
                     <span class="date-time"><span class="emoji">📅</span>Tuesday, October 7, 2025 | 12:00 PM - 1:00 PM (ET)</span>
@@ -704,7 +927,7 @@ Irfan Essa is a Distinguished Professor in the School of Interactive Computing (
                 </li>
              </ul>
                          <ul>
-                <li>
+                <li id="talk-ali-sarhadi-2025-09-22">
                     <span class="speaker"><span class="emoji">🎤</span><a href="https://sarhadi.eas.gatech.edu/" target="_blank">Ali Sarhadi</a></span>
                     <span class="affiliation"><span class="emoji">🏛️</span>School of Earth and Atmospheric Sciences, Georgia Institute of Technology</span>
                     <span class="date-time"><span class="emoji">📅</span>Monday, September 22nd, 2025 | 12:00 PM - 1:00 PM (ET)</span>
@@ -727,7 +950,7 @@ Ali Sarhadi is an Assistant Professor in the School of Earth and Atmospheric Sci
                 </li>
              </ul>
                        <ul>
-                <li>
+                <li id="talk-ann-fitz-gerald-2025-09-08">
                     <span class="speaker"><span class="emoji">🎤</span><a href="https://balsillieschool.ca/people/ann-fitz-gerald/" target="_blank">Ann Fitz-Gerald</a></span>
                     <span class="affiliation"><span class="emoji">🏛️</span>Balsillie School of International Affairs</span>
                     <span class="date-time"><span class="emoji">📅</span>Monday, September 8th, 2025 | 4:00 PM - 5:00 PM (ET)</span>
@@ -752,7 +975,7 @@ Ali Sarhadi is an Assistant Professor in the School of Earth and Atmospheric Sci
                 </li>
              </ul>
             <ul>
-                <li>
+                <li id="talk-constantinos-dovrolis-2025-05-01">
                     <span class="speaker"><span class="emoji">🎤</span><a href="https://sites.cc.gatech.edu/fac/constantinos.dovrolis/" target="_blank">Constantinos Dovrolis</a></span>
                     <span class="affiliation"><span class="emoji">🏛️</span>School of Computer Science, Georgia Tech</span>
                     <span class="date-time"><span class="emoji">📅</span>Thursday, May 1st, 2025 | 1:00 PM - 2:00 PM (ET)</span>
@@ -779,7 +1002,7 @@ Ali Sarhadi is an Assistant Professor in the School of Earth and Atmospheric Sci
                         </div>
                     </div>
                 </li>
-                <li>
+                <li id="talk-kaiyu-yang-2025-04-29">
                     <span class="speaker"><span class="emoji">🎤</span><a href="https://yangky11.github.io/" target="_blank">Kaiyu Yang</a></span>
                     <span class="affiliation"><span class="emoji">🏛️</span>Meta Fundamental AI Research (FAIR)</span>
                     <span class="date-time"><span class="emoji">📅</span>Tuesday, April 29th, 2025 | 2:00 PM - 3:00 PM (ET)</span>
@@ -804,7 +1027,7 @@ Ali Sarhadi is an Assistant Professor in the School of Earth and Atmospheric Sci
             </ul>
 
             <ul>
-                <li>
+                <li id="talk-ben-zorn-2025-04-17">
                     <span class="speaker"><span class="emoji">🎤</span><a href="https://www.microsoft.com/en-us/research/people/zorn/" target="_blank">Ben Zorn</a></span>
                     <span class="affiliation"><span class="emoji">🏛️</span>Microsoft Research</span>
                     <span class="date-time"><span class="emoji">📅</span>Thursday, April 17th, 2025 | 3:00 PM - 4:00 PM (ET)</span>
@@ -830,7 +1053,7 @@ Ali Sarhadi is an Assistant Professor in the School of Earth and Atmospheric Sci
                         </div>
                     </div>
                 </li>
-                <li>
+                <li id="talk-kevin-leyton-brown-2025-04-04">
                     <span class="speaker"><span class="emoji">🎤</span><a href="http://www.cs.ubc.ca/~kevinlb/" target="_blank">Kevin Leyton-Brown</a></span>
                     <span class="affiliation"><span class="emoji">🏛️</span>University of British Columbia</span>
                     <span class="date-time"><span class="emoji">📅</span>Friday, April 4th, 2025 | 4:00 PM - 5:00 PM (ET)</span>
@@ -854,7 +1077,7 @@ Ali Sarhadi is an Assistant Professor in the School of Earth and Atmospheric Sci
                         </div>
                     </div>
                 </li>
-                <li>
+                <li id="talk-jose-cambronero-2025-04-02">
                     <span class="speaker"><span class="emoji">🎤</span><a href="https://www.josecambronero.com/" target="_blank">José Cambronero</a></span>
                     <span class="affiliation"><span class="emoji">🏛️</span>Google</span>
                     <span class="date-time"><span class="emoji">📅</span>Wednesday, April 2nd, 2025 | 3:30 PM - 4:30 PM (ET)</span>
@@ -878,7 +1101,7 @@ Ali Sarhadi is an Assistant Professor in the School of Earth and Atmospheric Sci
                         </div>
                     </div>
                 </li>
-                <li>
+                <li id="talk-mirco-giacobbe-2025-03-06">
                     <span class="speaker"><span class="emoji">🎤</span><a href="https://mircogiacobbe.github.io/" target="_blank">Mirco Giacobbe</a></span>
                     <span class="affiliation"><span class="emoji">🏛️</span>University of Birmingham</span>
                     <span class="date-time"><span class="emoji">📅</span>Thursday, March 6th, 2025 | 3:30 PM - 4:30 PM (ET)</span>
@@ -900,7 +1123,7 @@ Ali Sarhadi is an Assistant Professor in the School of Earth and Atmospheric Sci
                         </div>
                     </div>
                 </li>
-                <li>
+                <li id="talk-aishik-ghosh-2025-03-05">
                     <span class="speaker"><span class="emoji">🎤</span><a href="https://profiles.lbl.gov/88117-aishik-ghosh" target="_blank">Aishik Ghosh</a></span>
                     <span class="affiliation"><span class="emoji">🏛️</span>UC Irvine & Berkeley Lab</span>
                     <span class="date-time"><span class="emoji">📅</span>Wednesday, March 5th, 2025 | 3:30 PM - 4:30 PM (ET)</span>
@@ -924,7 +1147,7 @@ Ali Sarhadi is an Assistant Professor in the School of Earth and Atmospheric Sci
                         </div>
                     </div>
                 </li>
-                <li>
+                <li id="talk-xia-ben-hu-2025-02-12">
                     <span class="speaker"><span class="emoji">🎤</span><a href="https://cs.rice.edu/~xh37/index.html" target="_blank">Xia (Ben) Hu</a></span>
                     <span class="affiliation"><span class="emoji">🏛️</span>Rice University</span>
                     <span class="date-time"><span class="emoji">📅</span>Wednesday, February 12th, 2025 | 12:30 PM - 1:30 PM (ET)</span>
@@ -947,7 +1170,7 @@ Ali Sarhadi is an Assistant Professor in the School of Earth and Atmospheric Sci
                         </div>
                     </div>
                 </li>
-                <li>
+                <li id="talk-wuyang-chen-2025-02-07">
                     <span class="speaker"><span class="emoji">🎤</span><a href="https://chenwydj.github.io//" target="_blank">Wuyang Chen</a></span>
                     <span class="affiliation"><span class="emoji">🏛️</span>Simon Fraser University</span>
                     <span class="date-time"><span class="emoji">📅</span>Friday, February 7th, 2025 | 4 PM - 5 PM (ET)</span>
@@ -973,7 +1196,7 @@ Ali Sarhadi is an Assistant Professor in the School of Earth and Atmospheric Sci
                         </div>
                     </div>
                 </li>
-                <li>
+                <li id="talk-pavlo-molchanov-2024-10-10">
                     <span class="speaker"><span class="emoji">🎤</span><a href="https://www.pmolchanov.com/" target="_blank">Pavlo Molchanov</a></span>
                     <span class="affiliation"><span class="emoji">🏛️</span>NVIDIA Research</span>
                     <span class="date-time"><span class="emoji">📅</span>Thursday, October 10th, 2024 | 12 PM - 1 PM (EDT) </span>
@@ -997,6 +1220,8 @@ Ali Sarhadi is an Assistant Professor in the School of Earth and Atmospheric Sci
                     </div>
                 </li>
             </ul>
+                </div>
+            </section>
         </div>
 
         <div id="mc_embed_signup" class="fade-in">
