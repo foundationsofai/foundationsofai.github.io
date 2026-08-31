@@ -566,7 +566,9 @@
                     <p class="talk-index-legend">Numbers are chronological: <strong>1</strong> is the earliest talk in the series. In multi-column layouts, read top-to-bottom within each column, then move to the next column.</p>
                     <div class="talk-index-section">
                         <p class="talk-index-section-title">Upcoming</p>
-                        <p class="talk-index-placeholder">No upcoming talks listed yet—check back soon.</p>
+                        <ul class="talk-index-grid-past">
+                            <li><a class="talk-index-link" href="#talk-binhang-yuan-2026-09-04"><span class="talk-index-num">27</span><span class="talk-index-row-inner"><span class="talk-index-name">Binhang Yuan</span><span class="talk-index-meta"><span class="talk-index-aff">Hong Kong University of Science and Technology</span><span class="talk-index-sep"> · </span><span class="talk-index-date">Sep 4, 2026</span></span></span></a></li>
+                        </ul>
                     </div>
                     <div class="talk-index-section">
                         <p class="talk-index-section-title">Past</p>
@@ -603,7 +605,32 @@
 
                 <div class="schedule-detailed" id="schedule-talk-details">
             <h4 style="color: #003057; margin: 30px 0 20px;">Future Talks</h4>
-            <p class="schedule-section-placeholder">Upcoming speakers and full listings will appear here when scheduled.</p>
+
+   <ul>
+                <li id="talk-binhang-yuan-2026-09-04">
+                    <span class="speaker"><span class="emoji">🎤</span><a href="https://binhangyuan.github.io/site/" target="_blank">Binhang Yuan</a></span>
+                    <span class="affiliation"><span class="emoji">🏛️</span>Hong Kong University of Science and Technology</span>
+                    <span class="date-time"><span class="emoji">📅</span>Friday, September 4, 2026 @ 12-1pm ET</span>
+                    <span class="location">
+                        <span class="emoji">📍</span><a href="https://maps.app.goo.gl/tcEyWXKFoNXWG56p9" target="_blank">Klaus Advanced Computing Building, Room 1456</a> |
+                        <span class="emoji">💻</span><a href="https://gatech.zoom.us/j/98699404350" target="_blank">Zoom</a>
+                    </span>
+                    <span class="topic"><span class="emoji">📚</span>On the Opportunities of Exploiting LLM Agents for ML System Design and Implementation</span>
+                    <div class="abstract">
+                        <span class="abstract-title"><span class="emoji">📝</span>Abstract</span>
+                        <p>Machine-learning systems are increasingly constrained not by large-scale model architecture alone, but also by the difficulty of designing, optimizing, and continuously adapting their underlying software infrastructure under various deployment scenarios. This talk examines the emerging opportunity to employ LLM agents as active autonomous system engineers rather than conventional code-generation assistants. We discuss two of our recent attempts: (i) Autopoiesis extends this idea from offline implementation to online operation: an LLM agent continuously observes serving behavior and rewrites scheduling policies as workloads and cluster conditions evolve. (ii) AVE demonstrates how domain-specific abstractions, data-flow invariants, and compiler-generated counterexamples can provide agents with sufficiently structured feedback to synthesize highly optimized GPU kernels, approaching hand-tuned performance across GEMM, attention, and Mixture-of-Experts workloads. We are also actively building AReaL-AutoPilot: an agentic control layer that translates an RL workload specification into a validated deployment plan, configures and launches the corresponding distributed RL system, monitors its execution, and progressively adapts system policies to changing models, workloads, and hardware conditions.</p>
+
+            <div class="bio">
+                    <span class="bio-title"><span class="emoji">👤</span>Bio</span>
+                        <div class="speaker-info">
+                            <img src="binhang-yuan.jpg" alt="Prof. Binhang Yuan" class="speaker-image">
+                            <div class="speaker-text">
+Binhang YUAN has been an Assistant Professor at the Department of Computer Science and Engineering (CSE), the Hong Kong University of Science and Technology (HKUST) since 2023. He is currently leading the AReaL open-source community. He received his Ph.D. degree from Rice University and his bachelor's degree from Fudan University. Before joining HKUST, he was a Postdoc at the Swiss Federal Institute of Technology Zurich (ETH Zurich). His main research interests are in distributed, decentralized, and heterogeneous machine learning systems for foundation models.
+
+
+               </div>
+                </li>
+             </ul>
 
             <h4 style="color: #003057; margin: 30px 0 20px;">Past Talks</h4>
 
